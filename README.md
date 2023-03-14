@@ -16,12 +16,15 @@ kubectl version --client
 
 <details>
   <summary>วิธีติดตั้ง kubectl บน Mac os Arm(HomeBrew)</summary>
+  
 ```
 brew install kubectl
 ```
+
 ```
 kubectl version --client
 ```
+
 </details>
 
 
