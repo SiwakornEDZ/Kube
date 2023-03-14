@@ -3,9 +3,11 @@
 ### kubectl
 <details>
   <summary>วิธีติดตั้ง kubectl บน Windows</summary>
+  
 ```
 curl.exe -LO "https://dl.k8s.io/release/v1.26.0/bin/windows/amd64/kubectl.exe"
 ```
+  
 * add path kubectl ที่ edit the system environment
 * check client version
 
@@ -60,8 +62,10 @@ minikube
 
 <details>
   <summary>วิธีติดตั้ง Minikubes บน Mac os Arm(HomeBrew)</summary>
+  
 ```
 brew install kubectl
 ```
+  
 </details>
 * Docker Desktop
