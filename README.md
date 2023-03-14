@@ -25,7 +25,10 @@ kubectl version --client
 </details>
 
 
-### Minikubes
+### Minikube
+
+<details>
+  <summary>วิธีติดตั้ง Minikubes บน Windows</summary>
 * download และ install
 
 ```
@@ -50,4 +53,12 @@ minikube
 
 ![image](https://user-images.githubusercontent.com/87377798/224981785-1ba2d858-edb7-4c18-ac37-27519fcb90c6.png)
 
+</details>
+
+<details>
+  <summary>วิธีติดตั้ง Minikubes บน Mac os Arm(HomeBrew)</summary>
+```
+brew install kubectl
+```
+</details>
 * Docker Desktop
