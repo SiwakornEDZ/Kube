@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+  annotations:
+    traefik.frontend.rule.type: PathPrefix
+    traefik.frontend.rule.rule: Host:web.spcn21.local
+spec:
+  selector:
+    app: hello-world
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  type: NodePort

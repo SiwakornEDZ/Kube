@@ -1,0 +1,38 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-basic-authen
+  namespace: spcn21
+spec:
+  basicAuth:
+    secret: dashboard-auth-secret
+    removeHeader: true
+---
+apiVersion: v1
+data:
+  users: c3BjbjIxOiQyeSQwNSRNYVNpU3poRC44c2MuRzhCZm9FZ2Qud08uR3YwOGcxN0kwaTJPVm4zMFRnNDVuL2djbmI5dQoK
+kind: Secret
+metadata:
+  name: dashboard-auth-secret
+  namespace: spcn21
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: spcn21
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-basic-authen
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`traefik.spcn21.local`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      kind: Rule
+      middlewares:
+        - name: traefik-basic-authen
+          namespace: spcn21
+      services:
+        - name: api@internal
+          kind: TraefikService
