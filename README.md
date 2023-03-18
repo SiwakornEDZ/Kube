@@ -80,6 +80,8 @@ brew install kubectl
 
 * MAC OS
 
+<img width="1440" alt="Screenshot 2566-03-19 at 00 06 28" src="https://user-images.githubusercontent.com/87377798/226124453-4be7bb6a-64ba-4533-927c-7e7b9976d7e2.png">
+
 # ขั้นตอนการ traefik 
 <details>
   <summary>อธิบาย ขั้นตอนการ deploy traefik(step by step)</summary>
