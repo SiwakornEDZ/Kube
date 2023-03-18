@@ -172,20 +172,7 @@ IngressRoute ชื่อ "service-ingress" ถูกกำหนดไว้ใ
 มี route เดียวที่ตรงกับ Host(web.spcn21.local) โดยใช้ kind: Rule และให้ forward ไปยัง Service ที่ชื่อว่า "rancher-service" โดยเปิด port 80 ภายใน container ซึ่งถูกกำหนดไว้ใน namespace "spcn21" โดย Service จะส่ง traffic ไปยัง Pod ที่ตรงกับ selector ของ Service นี้ใน namespace เดียวกันกับ Service นั้นๆ
   
 </details>
-# ขั้นตอนการ deploy rancher/hello-world
-### deploy โดยใช้คำสั่ง kubectl apply -f "แก้ไขตามชื่อไฟล์ yaml"
-* ขั้นตอนที่ 1 deploy hello-world.yaml
-```
-kubectl apply -f hello-world.yaml
-```
-* ขั้นตอนที่ 2 deploy service.yaml
-```
-kubectl apply -f service.yaml
-```
-* ขั้นตอนที่ 3 หลังจาก deploy ให้รันคำสั่ง minikube tunnel
-```
-minikube tunnel
-```
+
 # ผลลัพธ์
 * หน้า dashboard ของ kubernetes (ใช้คำสั่งด้านล่างในการรัน)
 
