@@ -81,8 +81,6 @@ brew install kubectl
 
 * MAC OS
 
-<img width="1440" alt="Screenshot 2566-03-17 at 04 38 46" src="https://user-images.githubusercontent.com/87377798/226121987-877dfb6f-ea8a-4f4f-a0a1-c6559c33ef1e.png">
-
 # ขั้นตอนการ depoly hello-world-rancer
 
 <details>
