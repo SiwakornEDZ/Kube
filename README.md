@@ -174,7 +174,58 @@ IngressRoute ชื่อ "service-ingress" ถูกกำหนดไว้ใ
 มี route เดียวที่ตรงกับ Host(web.spcn21.local) โดยใช้ kind: Rule และให้ forward ไปยัง Service ที่ชื่อว่า "rancher-service" โดยเปิด port 80 ภายใน container ซึ่งถูกกำหนดไว้ใน namespace "spcn21" โดย Service จะส่ง traffic ไปยัง Pod ที่ตรงกับ selector ของ Service นี้ใน namespace เดียวกันกับ Service นั้นๆ
   
 </details>
-
+# ขั้นตอนการ deploy traefik
+<details>
+  <summary>อธิบาย ขั้นตอนการ deploy traefik(step by step)</summary>
+  * ติดตั้ง Traefik Resource Definitions
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
+  ```
+  * ติดตั้ง RBAC for Traefik
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
+  ```
+  * ติดตั้ง Traefik Helmchart
+  ```
+  helm repo add traefik https://traefik.github.io/charts
+  ```
+  ```
+  helm repo update
+  ```
+  ```
+  helm install traefik traefik/traefik
+  ```
+  * เช็ค service kubectl traefik
+  ```
+  kubectl get svc -l app.kubernetes.io/name=traefik
+  ```
+  ```
+  kubectl get po -l app.kubernetes.io/name=traefik
+  ```
+  * หากยังไม่มีการแจก ip ให้ใช้คำสั่ง
+  ```
+  minikube tunnel
+  ```
+  * ขั้นตอนการสร้างไฟล์ secret(window รัยใน git bash)
+  ```
+  htpasswd -nB "กำหนด user" | tee auth-secret
+  ```
+  ```
+ kubectl create secret generic -n "กำหนด namespace" dashboard-auth-secret --from-file=users=auth-secret -o yaml --dry-run=client | tee dashboard-secret.yaml 
+  ```
+  * เสร็จแล้วจะได้ไฟล์ dashboard-secret.yaml จะทำการแยกไฟล์ หรือนำคำสั่งไปรวมกับไฟล์ traefik-dashboard.yaml ก็ได้
+  * ทำการ deploy 
+  ```
+  kubectl apply -f traefik-dashboard.yaml
+  ```
+  * ในการณีแยกไฟล์ dashboard-secret.yaml
+  ```
+  kubectl apply -f dashboard-secret.yaml
+  ```
+  ```
+  minikube tunnel
+  ```
+</details>
 # ขั้นตอนการ deploy rancher/hello-world
 ### deploy โดยใช้คำสั่ง kubectl apply -f "แก้ไขตามชื่อไฟล์ yaml"
 * ขั้นตอนที่ 1 deploy hello-world.yaml
@@ -203,7 +254,7 @@ minikube tunnel
 ![image](https://user-images.githubusercontent.com/87377798/226121630-fcb4fbe1-afe4-4e28-bf91-5b845f14a488.png)
 
 
-* หน้า dashboard ของ traefik [web.spcn21.local](traefik.scpcn21.local)
+* หน้า dashboard ของ traefik [traefik.spcn21.local](traefik.scpcn21.local)
 
 ![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
 
