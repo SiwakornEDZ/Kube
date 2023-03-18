@@ -75,6 +75,12 @@ brew install kubectl
 * Mac add hosts etc/hosts โดยใช้ namo หรือ vim editor
 * การติดตั้ง traefik [https://github.com/iamapinan/kubeplay-traefik](https://github.com/iamapinan/kubeplay-traefik)
 
+* windows
+
+![Screenshot 2023-03-19 000751](https://user-images.githubusercontent.com/87377798/226122046-72c3a492-241c-4862-8667-147ecb17ca29.png)
+
+*MAC OS
+
 <img width="1440" alt="Screenshot 2566-03-17 at 04 38 46" src="https://user-images.githubusercontent.com/87377798/226121987-877dfb6f-ea8a-4f4f-a0a1-c6559c33ef1e.png">
 
 
@@ -208,6 +214,8 @@ minikube tunnel
 * หน้าแสดงผลของ rancher
 
 ![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
+
+* หน้าแสดงผลของ rancher(mac)
 
 <img width="1440" alt="Screenshot 2566-03-18 at 05 13 23" src="https://user-images.githubusercontent.com/87377798/226121902-096636bd-4324-40f5-84e9-77d87073bebe.png">
 
