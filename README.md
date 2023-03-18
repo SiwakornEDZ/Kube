@@ -152,6 +152,8 @@ spec:
       port: 80
 
 ```
+</details>
+
 <details>
   <summary>อธิบาย service.yaml</summary>
   
@@ -163,6 +165,38 @@ IngressRoute ชื่อ "service-ingress" ถูกกำหนดไว้ใ
   
 </details>
 
-# ขั้นตอนการ deploy
+# ขั้นตอนการ deploy rancher/hello-world
+### deploy โดยใช้คำสั่ง kubectl apply -f "แก้ไขตามชื่อไฟล์ yaml"
+* ขั้นตอนที่ 1 deploy hello-world.yaml
+```
+kubectl apply -f hello-world.yaml
+```
+* ขั้นตอนที่ 2 deploy service.yaml
+```
+kubectl apply -f service.yaml
+```
+* ขั้นตอนที่ 3 หลังจาก deploy ให้รันคำสั่ง minikube tunnel
+```
+minikube tunnel
+```
 # ผลลัพธ์
+หน้า dashboard kubernetes
+
+![image](https://user-images.githubusercontent.com/87377798/226121006-93e390b0-5218-45ee-a54c-56df1bfd6431.png)
+
+หน้า traefik
+
+![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
+
+หน้าแสดงผล http router
+
+![image](https://user-images.githubusercontent.com/87377798/226121071-a571cccc-8fee-4f6e-b080-e4359f441668.png)
+
+หน้าแสดงผล rancher
+
+![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
+
 # ปัญหาที่พบเจอ
+
+* หลังจากที่ทำการรันผ่าน mac os arm ผ่าน docker พบปัญหาว่าบาง service ยังไม่รองรับเช่น ingress ของ traefik การแก้ปัญหาเบื้องต้นอาจจะต้องไปรันใน vmware (ปัญจุบันยังไม่รองรับ)
+
