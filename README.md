@@ -68,9 +68,13 @@ brew install kubectl
 ```
   
 </details>
-* Docker Desktop
 
-# ขั้นตอนการdepoly hello-world-rancer
+# การเตรียมการ 
+
+* Windows add host ใน C:\Windows\System32\drivers\etc/hosts
+* Mac add hosts etc/hosts โดยใช้ namo หรือ vim editor
+
+# ขั้นตอนการ depoly hello-world-rancer
 <details>
   <summary>code hello-world.yaml</summary>
   
@@ -114,6 +118,18 @@ spec:
 ```
   
 </details>
+</details>
+
+<details>
+  <summary>อธิบาย hello-world.yaml</summary>
+  
+### YAML ของ Kubernetes คือการรทำ Deployment และ Service ใน Kubernetes cluster
+
+Deployment ชื่อ "rancher-deployment" ถูกกำหนดไว้ใน namespace "spcn21" และระบุว่าจะมี pod ที่มี label "app: rancher" อยู่ 1 ตัว ภายใน template ของ pod จะถูกกำหนดเพิ่มเติม โดยมี container ชื่อ "rancher" ใช้ image "rancher/hello-world" และ กำหนดport 80
+
+Service ชื่อ "rancher-service" ถูกกำหนดไว้ใน namespace เดียวกัน และใช้ label selector "app: rancher" เพื่อ match กับ pod ที่ถูกสร้างโดย Deployment นั้น ๆ Service นี้จะ expose port 80 โดยใช้ protocol TCP และ map ไปที่ targetPort 80 ของ container ภายใน pod ที่มี label "app: rancher" นี้ Service จะใช้เพื่อให้เป็นตัวชื่อมต่อเครือข่ายของ pod ที่สร้างดเวย Deployment นี้ โดยใช้ได้ทั้งภายใน Kubernetes cluster และภายนอก cluster ตามที่กำหนดไว้ในเงื่อนไขของ Service นี้
+  
+</details>
 
 <details>
   <summary>code service rancer</summary>
@@ -136,6 +152,14 @@ spec:
       port: 80
 
 ```
+<details>
+  <summary>อธิบาย service.yaml</summary>
+  
+### YAML ที่อธิบายการสร้าง IngressRoute ใน Kubernetes โดยใช้ Traefik Ingress Controller ในการติดต่อระหว่าง Service กับ Ingress Controller และเชื่อมต่อกับ EntryPoints ต่างๆที่ถูกกำหนดไว้
+
+IngressRoute ชื่อ "service-ingress" ถูกกำหนดไว้ใน namespace "spcn21" โดยมี entryPoints สองตัวคือ "web" และ "websecure" เพื่อให้ Ingress Controller ของ Traefik รับรู้ว่าจะส่ง HTTP request มาที่ EntryPoints ตัวไหนของ Ingress Controller นี้โดยจะต้องมีการกำหนด Certificate สำหรับ EntryPoints "websecure" ด้วย
+
+มี route เดียวที่ตรงกับ Host(web.spcn21.local) โดยใช้ kind: Rule และให้ forward ไปยัง Service ที่ชื่อว่า "rancher-service" โดยเปิด port 80 ภายใน container ซึ่งถูกกำหนดไว้ใน namespace "spcn21" โดย Service จะส่ง traffic ไปยัง Pod ที่ตรงกับ selector ของ Service นี้ใน namespace เดียวกันกับ Service นั้นๆ
   
 </details>
 
