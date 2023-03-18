@@ -203,7 +203,7 @@ minikube tunnel
 ![image](https://user-images.githubusercontent.com/87377798/226121630-fcb4fbe1-afe4-4e28-bf91-5b845f14a488.png)
 
 
-* หน้า dashboard ของ traefik
+* หน้า dashboard ของ traefik (traefik.scpcn21.local)
 
 ![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
 
@@ -211,7 +211,7 @@ minikube tunnel
 
 ![image](https://user-images.githubusercontent.com/87377798/226121071-a571cccc-8fee-4f6e-b080-e4359f441668.png)
 
-* หน้าแสดงผลของ rancher
+* หน้าแสดงผลของ rancher (web.spcn21.local)
 
 ![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
 
@@ -226,7 +226,7 @@ minikube tunnel
 
 # ปัญหาที่พบเจอ
 
-* หลังจากที่ทำการรันผ่าน mac os arm ผ่าน docker พบปัญหาว่าบาง service ยังไม่รองรับเช่น ingress ของ traefik การแก้ปัญหาเบื้องต้นอาจจะต้องไปรันใน vmware (ปัญจุบันยังไม่รองรับ)
+* หลังจากที่ทำการรันผ่าน mac os arm ผ่าน docker พบปัญหาว่าบาง service ยังไม่รองรับเช่น ingress ของ traefik การแก้ปัญหาเบื้องต้นอาจจะต้องไปรันใน vmware (ปัจจุบันยังไม่รองรับ)
 
 # REF
 * [https://github.com/iamapinan/kubeplay-traefik](https://github.com/iamapinan/kubeplay-traefik)
