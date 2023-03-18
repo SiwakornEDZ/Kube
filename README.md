@@ -196,6 +196,10 @@ minikube tunnel
 
 ![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
 
+wakatime kube project
+
+[![wakatime](https://wakatime.com/badge/github/SiwakornEDZ/Kube.svg)](https://wakatime.com/badge/github/SiwakornEDZ/Kube)
+
 # ปัญหาที่พบเจอ
 
 * หลังจากที่ทำการรันผ่าน mac os arm ผ่าน docker พบปัญหาว่าบาง service ยังไม่รองรับเช่น ingress ของ traefik การแก้ปัญหาเบื้องต้นอาจจะต้องไปรันใน vmware (ปัญจุบันยังไม่รองรับ)
