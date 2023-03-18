@@ -79,7 +79,7 @@ brew install kubectl
 
 ![Screenshot 2023-03-19 000751](https://user-images.githubusercontent.com/87377798/226122046-72c3a492-241c-4862-8667-147ecb17ca29.png)
 
-*MAC OS
+* MAC OS
 
 <img width="1440" alt="Screenshot 2566-03-17 at 04 38 46" src="https://user-images.githubusercontent.com/87377798/226121987-877dfb6f-ea8a-4f4f-a0a1-c6559c33ef1e.png">
 
