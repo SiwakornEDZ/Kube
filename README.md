@@ -115,3 +115,30 @@ spec:
   
 </details>
 
+<details>
+  <summary>code service rancer</summary>
+  
+```
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: service-ingress
+  namespace: spcn21
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`web.spcn21.local`)
+    kind: Rule
+    services:
+    - name: rancher-service
+      port: 80
+
+```
+  
+</details>
+
+# ขั้นตอนการ deploy
+# ผลลัพธ์
+# ปัญหาที่พบเจอ
