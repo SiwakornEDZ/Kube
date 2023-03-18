@@ -188,6 +188,11 @@ minikube tunnel
 
 ![image](https://user-images.githubusercontent.com/87377798/226121006-93e390b0-5218-45ee-a54c-56df1bfd6431.png)
 
+* หน้า service ของ kubernetes
+
+![image](https://user-images.githubusercontent.com/87377798/226121630-fcb4fbe1-afe4-4e28-bf91-5b845f14a488.png)
+
+
 * หน้า dashboard ของ traefik
 
 ![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
