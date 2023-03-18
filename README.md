@@ -69,3 +69,49 @@ brew install kubectl
   
 </details>
 * Docker Desktop
+
+# ขั้นตอนการdepoly hello-world-rancer
+<details>
+  <summary>code hello-world.yaml</summary>
+  
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rancher-deployment
+  namespace: spcn21
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rancher
+  template:
+    metadata:
+      labels:
+        app: rancher
+    spec:
+      containers:
+      - name: rancher
+        image: rancher/hello-world
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rancher-service
+  labels:
+    name: rancher-service
+  namespace: spcn21
+spec:
+  selector:
+    app: rancher
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+```
+  
+</details>
+
