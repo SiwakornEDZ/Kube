@@ -1,4 +1,4 @@
-# ขั้นตอนการติดตั้ง
+# ขั้นตอนการติดตั้ง kubectl และ minikube
 
 ### kubectl
 <details>
