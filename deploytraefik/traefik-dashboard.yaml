@@ -10,7 +10,7 @@ spec:
 ---
 apiVersion: v1
 data:
-  users: c3BjbjIxOiQyeSQwNSRNYVNpU3poRC44c2MuRzhCZm9FZ2Qud08uR3YwOGcxN0kwaTJPVm4zMFRnNDVuL2djbmI5dQoK
+  users: G1s5MG1OZXcgcGFzc3dvcmQ6G1szOW0gG1s5MG1SZS10eXBlIG5ldyBwYXNzd29yZDobWzM5bSBzcGNuMjE6JDJhJDA1JFBDUHVSOHJ0ZktrS0Fqci5RNkFKVE9kM0QuMU83dy9kSlRyS2tCZ3lsdWtiRXZ2akpSMi55Cg==
 kind: Secret
 metadata:
   name: dashboard-auth-secret
@@ -28,7 +28,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.spcn21.local`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    - match: Host(`traefik.spcn21.local`) 
       kind: Rule
       middlewares:
         - name: traefik-basic-authen
