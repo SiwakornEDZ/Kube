@@ -203,7 +203,7 @@ minikube tunnel
 ![image](https://user-images.githubusercontent.com/87377798/226121630-fcb4fbe1-afe4-4e28-bf91-5b845f14a488.png)
 
 
-* หน้า dashboard ของ traefik (traefik.scpcn21.local)
+* หน้า dashboard ของ traefik [web.spcn21.local](traefik.scpcn21.local)
 
 ![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
 
@@ -211,7 +211,7 @@ minikube tunnel
 
 ![image](https://user-images.githubusercontent.com/87377798/226121071-a571cccc-8fee-4f6e-b080-e4359f441668.png)
 
-* หน้าแสดงผลของ rancher (web.spcn21.local)
+* หน้าแสดงผลของ rancher [web.spcn21.local](web.spcn21.local)
 
 ![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
 
