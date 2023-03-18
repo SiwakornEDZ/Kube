@@ -214,3 +214,10 @@ minikube tunnel
 
 * หลังจากที่ทำการรันผ่าน mac os arm ผ่าน docker พบปัญหาว่าบาง service ยังไม่รองรับเช่น ingress ของ traefik การแก้ปัญหาเบื้องต้นอาจจะต้องไปรันใน vmware (ปัญจุบันยังไม่รองรับ)
 
+# REF
+* [https://github.com/iamapinan/kubeplay-traefik](https://github.com/iamapinan/kubeplay-traefik)
+* [https://minikube.sigs.k8s.io/docs/handbook/accessing/#access-to-ports-1024-on-windows-require](https://minikube.sigs.k8s.io/docs/handbook/accessing/#access-to-ports-1024-on-windows-require)
+* [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/)
+* [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/)
+* [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+
