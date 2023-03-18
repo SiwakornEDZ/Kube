@@ -95,6 +95,11 @@ brew install kubectl
   ```
   kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
   ```
+  * สร้าง namespace
+  
+  ```
+  kubectl create namespace spcn21
+  ```
   
   * ติดตั้ง Traefik Helmchart
   
