@@ -180,23 +180,27 @@ kubectl apply -f service.yaml
 minikube tunnel
 ```
 # ผลลัพธ์
-หน้า dashboard kubernetes
+* หน้า dashboard ของ kubernetes (ใช้คำสั่งด้านล่างในการรัน)
+
+```
+ minikube dashboard
+```
 
 ![image](https://user-images.githubusercontent.com/87377798/226121006-93e390b0-5218-45ee-a54c-56df1bfd6431.png)
 
-หน้า traefik
+* หน้า dashboard ของ traefik
 
 ![image](https://user-images.githubusercontent.com/87377798/226121043-31aee760-34c0-4b09-ae0a-148b0a1591ba.png)
 
-หน้าแสดงผล http router
+* หน้าแสดงผล http router ของ traefik
 
 ![image](https://user-images.githubusercontent.com/87377798/226121071-a571cccc-8fee-4f6e-b080-e4359f441668.png)
 
-หน้าแสดงผล rancher
+* หน้าแสดงผลของ rancher
 
 ![image](https://user-images.githubusercontent.com/87377798/226121126-507233c4-dd09-44ed-ae33-9f6d62c54f29.png)
 
-wakatime kube project
+* wakatime kube project
 
 [![wakatime](https://wakatime.com/badge/github/SiwakornEDZ/Kube.svg)](https://wakatime.com/badge/github/SiwakornEDZ/Kube)
 
