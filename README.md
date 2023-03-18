@@ -73,6 +73,7 @@ brew install kubectl
 
 * Windows add host ใน C:\Windows\System32\drivers\etc/hosts
 * Mac add hosts etc/hosts โดยใช้ namo หรือ vim editor
+* การติดตั้ง traefik [https://github.com/iamapinan/kubeplay-traefik](https://github.com/iamapinan/kubeplay-traefik)
 
 # ขั้นตอนการ depoly hello-world-rancer
 <details>
