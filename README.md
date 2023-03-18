@@ -73,13 +73,83 @@ brew install kubectl
 
 * Windows add host ใน C:\Windows\System32\drivers\etc/hosts
 * Mac add hosts etc/hosts โดยใช้ namo หรือ vim editor
-* การติดตั้ง traefik [https://github.com/iamapinan/kubeplay-traefik](https://github.com/iamapinan/kubeplay-traefik)
 
 * windows
 
 ![Screenshot 2023-03-19 000751](https://user-images.githubusercontent.com/87377798/226122046-72c3a492-241c-4862-8667-147ecb17ca29.png)
 
 * MAC OS
+
+# ขั้นตอนการ traefik 
+<details>
+  <summary>อธิบาย ขั้นตอนการ deploy traefik(step by step)</summary>
+  
+  * ติดตั้ง Traefik Resource Definitions
+  
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-definition-v1.yml
+  ```
+  
+  * ติดตั้ง RBAC for Traefik
+  
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.9/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
+  ```
+  
+  * ติดตั้ง Traefik Helmchart
+  
+  ```
+  helm repo add traefik https://traefik.github.io/charts
+  ```
+  ```
+  helm repo update
+  ```
+  ```
+  helm install traefik traefik/traefik
+  ```
+  
+  * เช็ค service kubectl traefik
+  
+  ```
+  kubectl get svc -l app.kubernetes.io/name=traefik
+  ```
+  ```
+  kubectl get po -l app.kubernetes.io/name=traefik
+  ```
+  
+  * หากยังไม่มีการแจก ip ให้ใช้คำสั่ง
+  
+  ```
+  minikube tunnel
+  ```
+  
+  * ขั้นตอนการสร้างไฟล์ secret(window รัยใน git bash)
+  
+  ```
+  htpasswd -nB "กำหนด user" | tee auth-secret
+  ```
+  ```
+ kubectl create secret generic -n "กำหนด namespace" dashboard-auth-secret --from-file=users=auth-secret -o yaml --dry-run=client | tee dashboard-secret.yaml 
+  ```
+  
+  * เสร็จแล้วจะได้ไฟล์ dashboard-secret.yaml จะทำการแยกไฟล์ หรือนำคำสั่งไปรวมกับไฟล์ traefik-dashboard.yaml ก็ได้
+  
+  * ทำการ deploy 
+  
+  ```
+  kubectl apply -f traefik-dashboard.yaml
+  ```
+  
+  * ในการณีแยกไฟล์ dashboard-secret.yaml
+  
+  ```
+  kubectl apply -f dashboard-secret.yaml
+  ```
+  ```
+  minikube tunnel
+  ```
+  
+</details>
 
 # ขั้นตอนการ depoly hello-world-rancer
 
